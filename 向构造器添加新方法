@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="basic.js"></script>
+    <title>prototypes</title>
+  </head>
+  <body>
+    <p>prototypes()向构造器添加新方法</p>
+    <p id="demo" >正确情况下，你是看不到我滴！</p>
+    <script>
+    function Person(firstName, lastName, age, eyeColor){
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.age = age;
+      this.eyeColor = eyeColor;
+    }
+    //向构造函数添加新方法
+    Person.prototype.name = function(){
+      return this.firstName + " " + this.lastName
+    };
+    //创建对象
+    var Mother = new Person ("Bobo", "Lucy", 30, "black" );
+    //测试输出
+    document.getElementById("demo").innerHTML = "My mother is " + Mother.name();
+    </script>
+  </body>
+  </body>
+</html>
