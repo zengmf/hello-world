@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>apply()</title>
+  </head>
+  <body>
+    <h2>JavaScript Functions</h2>
+    <p>apply()应用</p>
+    <p id="demo">当你看到我，说明你的代码出错了！</p>
+    <script>
+      var person = {
+        fullName: function(city, country) {
+          return (
+            this.firstName + " " + this.lastName + "," + city + "," + country
+          );
+        }
+      };
+      var person1 = {
+        firstName: "John",
+        lastName: "Doe"
+      };
+      var x = person.fullName.apply(person1, ["Oslo", "Norway"]);
+      document.getElementById("demo").innerHTML = x;
+    </script>
+  </body>
+</html>
