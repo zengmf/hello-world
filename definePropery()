@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="basic.js"></script>
+    <title>添加Getters和Setter</title>
+  </head>
+  <body>
+    <p id="demo">defineProperty()添加Getters和Setter</p>
+    <script>
+      var obj = { counter: 0 };
+      Object.defineProperty(obj, "reset", {
+        get: function() {
+          this.counter = 0;
+        }
+      });
+      Object.defineProperty(obj, "increment", {
+        get: function() {
+          this.counter++;
+        }
+      });
+      Object.defineProperty(obj, "decrement", {
+        get: function() {
+          this.counter--;
+        }
+      });
+      Object.defineProperty(obj, "add", {
+        set: function(value) {
+          this.counter += value;
+        }
+      });
+      Object.defineProperty(obj, "subtract", {
+        set: function(value) {
+          this.counter -= value;
+        }
+      });
+      //测试
+      obj.reset;
+      obj.add = 5;
+      obj.subtract = 1;
+      obj.increment;
+      obj.decrement;
+      document.getElementById("demo").innerHTML = obj.counter;
+    </script>
+  </body>
+</html>
